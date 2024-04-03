@@ -11,11 +11,10 @@ void    print_lst(t_list *lst)
         return ;
     }
     temp = lst;
-    ft_printf("%i\n", *(int *)temp->content);
-    while (temp->next)
+    while (temp)
     {
-        temp = temp->next;
         ft_printf("%i\n", *(int *)temp->content);
+        temp = temp->next;
     }
     return ;    
 }
