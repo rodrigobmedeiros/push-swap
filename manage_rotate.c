@@ -28,7 +28,7 @@ static int rotate_b(t_list *b)
     return (1);
 }
 
-int apply_rotation(t_list **a_lst, t_list **b_lst)
+int apply_rotate(t_list **a_lst, t_list **b_lst)
 {
     if (rotate_a(*a_lst) && rotate_b(*b_lst))
     {

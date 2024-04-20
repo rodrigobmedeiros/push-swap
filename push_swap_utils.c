@@ -5,7 +5,7 @@ int get_node_content(t_list *lst)
     return (*(int *)(lst->content));
 }
 
-void    print_reverse_lst(t_list *lst, int lst_size)
+void    print_reverse_lst(t_list *lst, int lst_size, char *text)
 {
     t_list *temp;
     int *arr;
@@ -27,11 +27,9 @@ void    print_reverse_lst(t_list *lst, int lst_size)
     }
     i = 0;
     while (i < lst_size)
-    {
-        ft_printf("%i\n", arr[i]);
-        i++;
-    }
+        ft_printf("   %i   \n", arr[i++]);
     free(arr);
+    ft_printf("-----%s\n\n", text);
     return ;
 }
 
