@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build my program",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-g",
+                "-Wall",
+                "-Wextra",
+                "-Werror",
+                "main.c",
+                "push_swap_operations.c",
+                "push_swap_utils.c",
+                "manage_rotate.c",
+                "manage_swap.c",
+                "manage_push.c",
+                "push_swap_errors.c",
+                "./libft/libft.a",
+                "-o",
+                "push_swap",
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
