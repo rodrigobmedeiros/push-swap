@@ -111,16 +111,15 @@ int push_swap(int *arr, int size)
     add_one_or_two_elements_to_b(&a_lst, &b_lst); // Se tenho mais que 3 elementos em a passo 1 (se a tiver 4) ou 2 (se tiver +4).
     while (!(is_lst_sorted(a_lst, 1) && init_size_a == ft_lstsize(a_lst)))
     {
-        if (ft_lstsize(a_lst) <= 3 && !is_lst_sorted(a_lst, 1))
+        if (ft_lstsize(a_lst) <= 3)
         {
             sort_small_stack(&a_lst, &b_lst);
             push_items_to_a(&a_lst, &b_lst);
             break ;
         }
         push_item_to_b(&a_lst, &b_lst);
-        print_reverse_lst(a_lst, ft_lstsize(a_lst), "a");
-        print_reverse_lst(b_lst, ft_lstsize(b_lst), "b");
     }
+    print_reverse_lst(a_lst, ft_lstsize(a_lst), "a");
     ft_lstclear(&a_lst, clean_lst_content);
     ft_lstclear(&b_lst, clean_lst_content);
     return (1);
