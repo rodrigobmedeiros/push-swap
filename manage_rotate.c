@@ -19,6 +19,8 @@ static int rotate_b(t_list *b)
     t_list *first;
     t_list *last;
 
+    if (!b)
+        return (0);
     if (ft_lstsize(b) < 2)
         return (0);
     last = b;
@@ -30,7 +32,7 @@ static int rotate_b(t_list *b)
 
 int apply_rotate(t_list **a_lst, t_list **b_lst)
 {
-    if (rotate_a(*a_lst) && rotate_b(*b_lst))
+    if (rotate_a(*a_lst) && b_lst && rotate_b(*b_lst))
     {
         manage_operations(rotate, a_lst, b_lst, both);
         return (1);

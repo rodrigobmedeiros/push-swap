@@ -19,6 +19,8 @@ static int reverse_rotate_b(t_list *b)
     t_list *first;
     t_list *last;
 
+    if (!b)
+        return (0);
     if (ft_lstsize(b) < 2)
         return (0);
     last = b;
@@ -30,7 +32,7 @@ static int reverse_rotate_b(t_list *b)
 
 int apply_reverse_rotate(t_list **a_lst, t_list **b_lst)
 {
-    if (reverse_rotate_a(*a_lst) && reverse_rotate_b(*b_lst))
+    if (reverse_rotate_a(*a_lst) && b_lst && reverse_rotate_b(*b_lst))
     {
         manage_operations(reverse_rotate, a_lst, b_lst, both);
         return (1);

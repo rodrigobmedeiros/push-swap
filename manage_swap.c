@@ -42,7 +42,7 @@ static int swap_b(t_list *b)
 
 int apply_swap(t_list **a_lst, t_list **b_lst)
 {
-    if (swap_a(*a_lst) && swap_b(*b_lst))
+    if (swap_a(*a_lst) && b_lst && swap_b(*b_lst))
     {
         manage_operations(swap, a_lst, b_lst, both);
         return (1);
