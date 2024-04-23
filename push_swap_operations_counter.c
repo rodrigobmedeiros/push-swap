@@ -21,22 +21,38 @@ t_op_counter	init_op_counter(void)
 	op_counter.rra = 0;
 	op_counter.rrb = 0;
 	op_counter.rrr = 0;
-	op_counter.total = 0;
+	op_counter.total = 2147483647;
 	return (op_counter);
+}
+
+void    calculate_counter(t_op_counter *op_counter, int count, t_list **a_lst, t_list **b_lst)
+{
+    t_op_counter    counter;
+
+    counter = init_op_counter();
+    op_counter->ra = count;
+	op_counter->rb = count_rotate_to_b(a_lst, b_lst, rotate);
+    if (op_counter->ra < op_counter->rb)
+        op_counter->rr = op_counter->ra;
+    else
+        op_counter->rr = op_counter->rb;
+    op_counter-> ra = op_counter->ra - op_counter->rr;
+    op_counter-> rb = op_counter->rb - op_counter->rr;
+    op_counter->total = op_counter->rr + op_counter->ra + op_counter->rb;
 }
 
 
 t_op_counter	apply_op_counter_b(t_list **a_lst, t_list **b_lst)
 {
-	t_op_counter	op_counter;
+	t_op_counter	min_counter;
+    t_op_counter    counter;
 	int				count;
 
-	op_counter = init_op_counter();
+	min_counter = init_op_counter();
 	count = 0;
-	while (*a_lst)
+	while (count < ft_lstsize(*a_lst))
 	{
-		op_counter.ra = count;
-		op_counter.rb = 
+        counter = calculate_counter(&op_counter, count);
 	}
 
 
