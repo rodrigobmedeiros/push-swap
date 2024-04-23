@@ -14,7 +14,7 @@
 int	count_rotate_to_b(t_list **a_lst, t_list **b_lst, t_op op)
 {
 	int	count;
-	int count_back;
+	int	count_back;
 
 	count = 0;
 	while (1)
@@ -42,7 +42,7 @@ int	count_rotate_to_b(t_list **a_lst, t_list **b_lst, t_op op)
 int	count_rotate_to_a(t_list **a_lst, t_list **b_lst, t_op op)
 {
 	int	count;
-	int count_back;
+	int	count_back;
 
 	count = 0;
 	while (1)
@@ -69,8 +69,8 @@ int	count_rotate_to_a(t_list **a_lst, t_list **b_lst, t_op op)
 
 t_op	manage_rotates(t_list **a_lst, t_list**b_lst, t_sc stack)
 {
-	int count_rotate;
-	int count_reverse_rotate;
+	int	count_rotate;
+	int	count_reverse_rotate;
 
 	if (stack == a)
 	{

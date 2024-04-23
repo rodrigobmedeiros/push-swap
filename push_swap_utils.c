@@ -11,6 +11,20 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
+t_opc	init_op_counter(void)
+{
+	t_opc	op_counter;
+
+	op_counter.ra = 0;
+	op_counter.rb = 0;
+	op_counter.rr = 0;
+	op_counter.rra = 0;
+	op_counter.rrb = 0;
+	op_counter.rrr = 0;
+	op_counter.total = 2147483647;
+	return (op_counter);
+}
+
 int	gnc(t_list *lst)
 {
 	return (*(int *)(lst->content));

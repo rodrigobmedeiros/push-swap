@@ -29,16 +29,21 @@ void	push_item_to_a(t_list **a_lst, t_list **b_lst)
 
 void	push_item_to_b(t_list **a_lst, t_list**b_lst)
 {
-	t_op	op;
-	int		n_operations;
+	t_opc	op_counter;
 
-	op = manage_rotates(a_lst, b_lst, b);
-	n_operations = count_rotate_to_b(a_lst, b_lst, op);
-	while (n_operations > 0)
-	{
-		manage_operations(op, a_lst, b_lst, b);
-		n_operations--;
-	}
+	op_counter = get_min_operations_b(a_lst, b_lst);
+	while (op_counter.ra-- > 0)
+		manage_operations(rotate, a_lst, b_lst, a);
+	while (op_counter.rb-- > 0)
+		manage_operations(rotate, a_lst, b_lst, b);
+	while (op_counter.rr-- > 0)
+		manage_operations(rotate, a_lst, b_lst, both);
+	while (op_counter.rra-- > 0)
+		manage_operations(reverse_rotate, a_lst, b_lst, a);
+	while (op_counter.rrb-- > 0)
+		manage_operations(reverse_rotate, a_lst, b_lst, b);
+	while (op_counter.rrr-- > 0)
+		manage_operations(reverse_rotate, a_lst, b_lst, both);
 	manage_operations(push, a_lst, b_lst, b);
 	return ;
 }
@@ -74,7 +79,7 @@ int	apply_push_a(t_list **a_lst, t_list **b_lst)
 	return (0);
 }
 
-int apply_push_b(t_list **a_lst, t_list **b_lst)
+int	apply_push_b(t_list **a_lst, t_list **b_lst)
 {
 	t_list	*last_a;
 	t_list	*last_b;
