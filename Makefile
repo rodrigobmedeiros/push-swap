@@ -6,6 +6,7 @@ SRCS = \
 	push_swap_operations.c \
 	push_swap_utils.c \
 	push_swap_refinement.c \
+	push_swap_optimization.c \
 	manage_rotate.c \
 	manage_reverse_rotate.c \
 	manage_swap.c \

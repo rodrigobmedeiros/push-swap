@@ -31,6 +31,8 @@ void	sort_small_stack(t_list **a_lst, t_list **b_lst)
 
 void	add_one_or_two_elements_to_b(t_list **a_lst, t_list **b_lst)
 {
+	if (is_lst_sorted(*a_lst, 1))
+		return ;
 	if (ft_lstsize(*a_lst) <= 3)
 		return ;
 	if (ft_lstsize(*a_lst) == 4)
@@ -50,8 +52,8 @@ int	find_small_number(t_list *lst)
 	min_value = 2147483647;
 	while (lst)
 	{
-		if (gnd(lst) < min_value)
-			min_value = gnd(lst);
+		if (gnc(lst) < min_value)
+			min_value = gnc(lst);
 		lst = lst->next;
 	}
 	return (min_value);
@@ -86,7 +88,7 @@ void	apply_rotations_if_needed(t_list **lst, int min_value)
 	while (temp)
 	{
 		min_position++;
-		if (min_value == gnd(temp))
+		if (min_value == gnc(temp))
 			break ;
 		temp = temp->next;
 	}

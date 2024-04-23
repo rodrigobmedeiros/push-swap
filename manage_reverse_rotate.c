@@ -20,7 +20,7 @@ static int	reverse_rotate_a(t_list *a)
 		return (0);
 	last = a;
 	first = ft_lstlast(a);
-	if (gnd(first) > gnd(last))
+	if (gnc(first) > gnc(last))
 		return (0);
 	return (1);
 }

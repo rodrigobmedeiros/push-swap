@@ -27,14 +27,17 @@ typedef enum e_OpName {
 int		apply_rotate(t_list **a_lst, t_list **b_lst);
 int		apply_reverse_rotate(t_list **a_lst, t_list **b_lst);
 int		apply_swap(t_list **a_lst, t_list **b_lst);
-int		apply_push(t_list **a_lst, t_list **b_lst);
+int		apply_push_a(t_list **a_lst, t_list **b_lst);
+int		apply_push_b(t_list **a_lst, t_list **b_lst);
 int		op_swap(t_list **lst);
 int		op_push(t_list **from, t_list **to);
 int		op_rotate(t_list **lst);
 int		op_reverse_rotate(t_list **lst);
-int		gnd(t_list *lst);
+int		gnc(t_list *lst);
 int		is_lst_sorted(t_list *lst, int asc);
 int		find_small_number(t_list *lst);
+int		count_rotate_to_b(t_list **a_lst, t_list **b_lst, t_op op);
+int		count_rotate_to_a(t_list **a_lst, t_list **b_lst, t_op op);
 void	manage_operations(t_op op, t_list **a_lst, t_list **b_lst, t_sc s_code);
 void	print_reverse_lst(t_list *lst, int lst_size, char *text);
 void	clean_lst_content(void *content);
@@ -46,4 +49,5 @@ void	push_items_to_a(t_list **a_lst, t_list **b_lst);
 void	sort_small_stack(t_list **a_lst, t_list **b_lst);
 void	add_one_or_two_elements_to_b(t_list **a_lst, t_list **b_lst);
 void	apply_rotations_if_needed(t_list **lst, int min_value);
+t_op	manage_rotates(t_list **a_lst, t_list**b_lst, t_sc stack);
 #endif

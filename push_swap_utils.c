@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int	gnd(t_list *lst)
+int	gnc(t_list *lst)
 {
 	return (*(int *)(lst->content));
 }
@@ -32,7 +32,7 @@ void	print_reverse_lst(t_list *lst, int lst_size, char *text)
 	temp = lst;
 	while (temp)
 	{
-		arr[i] = gnd(temp);
+		arr[i] = gnc(temp);
 		i--;
 		temp = temp->next;
 	}
@@ -53,9 +53,9 @@ int	is_lst_sorted(t_list *lst, int asc)
 	temp = lst;
 	while (temp->next)
 	{
-		if ((gnd(temp) < gnd(temp->next)) && asc)
+		if ((gnc(temp) < gnc(temp->next)) && asc)
 			return (0);
-		if ((gnd(temp) > gnd(temp->next)) && !asc)
+		if ((gnc(temp) > gnc(temp->next)) && !asc)
 			return (0);
 		temp = temp->next;
 	}

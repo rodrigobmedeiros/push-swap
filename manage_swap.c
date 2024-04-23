@@ -20,7 +20,7 @@ static int	swap_a(t_list *a)
 		return (0);
 	last = ft_lstpop(&a);
 	before_last = ft_lstpop(&a);
-	if (gnd(last) < gnd(before_last))
+	if (gnc(last) < gnc(before_last))
 	{
 		ft_lstadd_back(&a, before_last);
 		ft_lstadd_back(&a, last);
